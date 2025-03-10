@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    background-color: white;
+}
+
+header{
+    
+    display: grid;
+    height: 50px;
+    /* aqui eu determino é são 3 colunas de tamanhos iguas, cada coluna tem uma fração */
+    grid-template-columns: repeat(3, 1fr);
+ 
+    /* espaço entre um elemento interno e outro */
+    grid-gap: 5px 8px;
+    /* margem interna que afasta os elementos da borda do grid */
+    padding: 20px 10px;
+    background-color: tomato;
+   
+}
+header .icon1{
+    display: block;
+    background-color: green;
+}
+header .logo{
+    width: 200px;
+    background-color: green;
+}
+header .icon2{
+    background-color: green;
+}
+
+
+main .mensagens  {
+    display: grid;
+    height: 200px;
+    padding: 20px 16px;
+    background-color: rgb(112, 112, 204);
+
+}
+main .mensagem{
+    padding-left: 50px;
+}
+
+main .aulas{
+        
+    display: grid;
+    height: 400px;
+    /* aqui eu determino é são 3 colunas de tamanhos iguas, cada coluna tem uma fração */
+    grid-template-rows: repeat(3, 1fr);
+    /* espaço entre um elemento interno e outro */
+    grid-gap: 5px 8px;
+    /* margem interna que afasta os elementos da borda do grid */
+    padding: 20px 10px;
+    background-color: rgb(208, 255, 0);
+}
+
+main .disp{
+    width: 414;
+    background-color: aqua;
+}
+
+main .noticias{
+    display: grid;
+    height: 400px;
+    padding: 20px 10px;
+    background-color:blueviolet;
+}
