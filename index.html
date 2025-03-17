@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reserva de Armário</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
-</head>
-<body>
-    <header> 
-        <img class= "icon1" src="logoinatel.png" alt="Icone1">
-        <img class= "logo" src="logoinatel.png" alt="Logo">
-        <img class= "icon2" src="logoinatel.png" alt="icone2">
-      
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <span class="material-symbols-outlined" id="menu-icon">menu</span>
+      <img class="logo" src="logo.svg" alt="Logo" />
+      <span class="material-symbols-outlined">notifications</span>
     </header>
-    <main>
-        <div class="mensagens">
-            <h1>Olá, Tiago!</h2>
-            <p class="mensagem">Você possui um armário reservado com entrega para hoje</p>
-            <p class="mensagem">Você possui uma pendência no financeiro </p>
-        </div>
-        <div class="aulas">
-            <p class="disp"> Disciplina,sala e horário </p>
-            <p class="disp"> Disciplina,sala e horário </p>
-            <p class="disp"> Disciplina,sala e horário </p>
-        </div>
-        <div class="noticias">
-            <h1>Card de Notícias</h1>
-            <h2>Subtítulo</h2>
-        </div>
-       
-    </main>
-   
 
-</body>
+    <!-- Menu lateral -->
+    <nav id="side-menu">
+      <div class="theme-selector">
+        <label for="theme">Escolha o Tema:</label>
+        <select id="theme" name="theme">
+          <option value="inatel">Tema Inatel</option>
+          <option value="alt">Dark</option>
+        </select>
+      </div>
+      <button id="close-menu" class="close-btn">X</button>
+    </nav>
+
+    <main>
+      <div class="mensagens">
+        <h1>Olá, Tiago!</h1>
+        <p class="mensagem">Você possui um armário reservado com entrega para hoje</p>
+        <p class="mensagem">Você possui uma pendência no financeiro</p>
+      </div>
+      <div class="aulas">
+        <div class="aula1">
+          <p class="disp">Disciplina</p>
+          <p class="disp">Sala</p>
+          <p class="disp">Horário</p>
+        </div>
+        <p class="disp">Disciplina, sala e horário</p>
+        <p class="disp">Disciplina, sala e horário</p>
+        <p class="disp">Disciplina, sala e horário</p>
+      </div>
+      <div class="noticias">
+        <h1>Card de Notícias</h1>
+        <h2>Subtítulo</h2>
+      </div>
+      <div class="footer">
+        <div class="bolinha"></div>
+        <div class="bolinha"></div>
+        <div class="bolinha"></div>
+      </div>
+    </main>
+  </body>
 </html>

@@ -96,3 +96,40 @@ function tempoRestante() {
       "resultado"
     ).innerText = `Olá, ${usuario.nome}! Você não tem nenhuma pendência!`;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.getElementById('menu-icon');
+  const sideMenu = document.getElementById('side-menu');
+  const closeBtn = document.getElementById('close-menu');
+  const themeSelector = document.getElementById('theme');
+  
+  // Abre o menu ao clicar no ícone de menu
+  menuIcon.addEventListener('click', function() {
+      sideMenu.classList.toggle('open');
+  });
+  
+  // Fecha o menu ao clicar no botão de fechar
+  closeBtn.addEventListener('click', function() {
+      sideMenu.classList.remove('open');
+  });
+
+  // Altera o tema ao selecionar uma opção
+  themeSelector.addEventListener('change', function() {
+      const selectedTheme = themeSelector.value;
+
+      // Altera as cores da paleta com base na seleção
+      if (selectedTheme === 'inatel') {
+          document.documentElement.style.setProperty('--primary-color', '#004A99');
+          document.documentElement.style.setProperty('--secondary-color', '#34578b');
+          document.documentElement.style.setProperty('--background-light', '#FFFFFF');
+          document.documentElement.style.setProperty('--text-dark', '#000000');
+          document.documentElement.style.setProperty('--text-light', '#FFFFFF');
+      } else if (selectedTheme === 'dark') {
+          document.documentElement.style.setProperty('--primary-color', '#1E3A8A');
+          document.documentElement.style.setProperty('--secondary-color', '#10B981');
+          document.documentElement.style.setProperty('--background-light', '#121212');
+          document.documentElement.style.setProperty('--text-dark', '#ffffff');
+          document.documentElement.style.setProperty('--text-light', '#FFFFFF');
+      }
+  });
+});

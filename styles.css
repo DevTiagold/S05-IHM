@@ -1,72 +1,292 @@
-*{
+/* Reset de estilos */
+* {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
+    font-family: 'Arimo', sans-serif;
+    /* Fonte do Google Fonts */
 }
 
-body{
-    background-color: white;
+/* Definição das paletas de cores */
+:root {
+    /* Paleta Original (Light) */
+    --primary-color: #004A99;
+    /* Azul do Inatel */
+    --secondary-color: #34578b;
+    /* Laranja */
+    --background-light: #FFFFFF;
+    /* Fundo claro */
+    --text-dark: #000000;
+    /* Texto escuro */
+    --text-light: #FFFFFF;
+    /* Texto branco */
+
+    /* Paleta Dark */
+    --dark-primary: #1E3A8A;
+    /* Azul escuro */
+    --dark-secondary: #10B981;
+    /* Verde */
+    --dark-background: #121212;
+    /* Fundo escuro */
+    --dark-text-light: #ffffff;
+    /* Texto claro */
+    --dark-text-dark: #ffffff;
+    /* Texto escuro no tema escuro */
+
+    /* Para botões e barra de navegação */
+    --button-bar-background: #FFFFFF;
+    /* Barra de botões branca para tema original */
 }
 
-header{
-    
+/* Escolha de tema: Original (light) ou Dark (dark) */
+body {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    /* Azul do Inatel */
+    min-height: 70px;
+    color: var(--text-light);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    max-height: 60px;
+    /* Mantém o tamanho correto */
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* Logo branco */
+}
+
+/* Ícones */
+.icon {
+    height: 40px;
+}
+
+/* Botões */
+button {
+    background-color: var(--secondary-color);
+    /* Laranja */
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+
+
+button:hover {
+    background-color: var(--primary-color);
+    /* Azul */
+}
+
+
+
+/* Barra de Botões */
+button-bar {
+    background-color: var(--button-bar-background);
+    /* Barra branca */
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+
+/* Conteúdo principal */
+main {
+    padding: 20px;
+}
+
+/* Seção de Mensagens */
+.mensagens {
     display: grid;
-    height: 50px;
-    /* aqui eu determino é são 3 colunas de tamanhos iguas, cada coluna tem uma fração */
-    grid-template-columns: repeat(3, 1fr);
- 
-    /* espaço entre um elemento interno e outro */
-    grid-gap: 5px 8px;
-    /* margem interna que afasta os elementos da borda do grid */
-    padding: 20px 10px;
-    background-color: tomato;
-   
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 20px;
 }
-header .icon1{
+
+.mensagem {
+    margin: 5px 0;
+}
+
+.alerta {
+    font-weight: bold;
+    color: yellow;
+}
+
+/* Seção de Aulas */
+.aulas {
+
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--text-light)
+}
+
+.aula-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.aula-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+
+/* Notícias */
+.noticias {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    color: var(--dark-text-light);
+}
+
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+
+
+/* Elemento animado */
+.bolinha {
+    background-color: blue;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.bolinha:hover {
+    background-color: rgb(0, 132, 255);
+    height: 25px;
+    width: 25px;
+}
+
+/* Estilo do Menu Lateral */
+#side-menu {
+    position: fixed;
+    left: -250px;
+    /* Inicialmente fora da tela */
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: var(--primary-color);
+    /* Azul do Inatel */
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    padding-right: 20px;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* Seletor de Tema */
+.theme-selector {
+    padding: 20px 20px 10px 20px;
+    /* Ajustado para maior compactação */
+    text-align: center;
+}
+
+.theme-selector label {
+    font-size: 14px;
+    /* Tamanho da fonte reduzido */
+    color: var(--text-light);
+}
+
+.theme-selector select {
+    background-color: var(--primary-color);
+    /* Azul do Inatel */
+    color: var(--text-light);
+    border: none;
+    padding: 8px;
+    /* Reduzido para não ocupar muito espaço */
+    font-size: 14px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+/* Botão de Fechar */
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+
+/* Estilo dos links no menu (começam escondidos) */
+#side-menu .menu-links {
+    list-style-type: none;
+    padding: 0;
+    display: none;
+    /* Inicialmente escondidos */
+    margin-top: 30px;
+}
+
+#side-menu .menu-links li {
+    margin: 20px 0;
+}
+
+#side-menu .menu-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
     display: block;
-    background-color: green;
-}
-header .logo{
-    
-    background-color: green;
-}
-header .icon2{
-    background-color: green;
+    transition: background-color 0.3s;
 }
 
 
-main .mensagens  {
-    display: grid;
-    height: 200px;
-    padding: 20px 16px;
-    background-color: rgb(112, 112, 204);
-
-}
-main .mensagem{
-    padding-left: 50px;
+/* Quando o menu estiver ativo, mostra as opções de menu */
+#side-menu.open .menu-links {
+    display: block;
 }
 
-main .aulas{
-        
-    display: grid;
-    height: 400px;
-    /* aqui eu determino é são 3 colunas de tamanhos iguas, cada coluna tem uma fração */
-    grid-template-rows: repeat(3, 1fr);
-    /* espaço entre um elemento interno e outro */
-    grid-gap: 5px 8px;
-    /* margem interna que afasta os elementos da borda do grid */
-    padding: 20px 10px;
-    background-color: rgb(208, 255, 0);
+/* Quando o menu estiver ativo */
+#side-menu.open {
+    left: 0;
+    /* O menu vem para a tela */
 }
 
-main .disp{
-    width: 414;
-    background-color: aqua;
+/* Estilo do botão menu (icones no header) */
+.material-symbols-outlined {
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text-light);
 }
 
-main .noticias{
-    display: grid;
-    height: 400px;
-    padding: 20px 10px;
-    background-color:blueviolet;
+body[data-theme="dark"] .material-symbols-outlined {
+    color: var(--dark-text-light);
 }
+
+/* Ajustes ao conteúdo quando o menu estiver aberto */
